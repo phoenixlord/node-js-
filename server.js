@@ -39,7 +39,10 @@ app.use((req,res,next)=>{
 
 app.get('/',(req,res)=>{
     
-    res.send('<h1>hello world!</h1>')
+    res.render('home.hbs',{
+        
+        pageTitle:'Home Page'
+    })
     
 });
 
@@ -50,6 +53,19 @@ app.get('/about',(req,res)=>{
         
     })
 });
+
+
+app.get('/services',(req,res)=>{
+    
+    res.render('services.hbs',{
+               
+            pageTitle:'Services'   
+               
+               })
+    
+})
+
+
 
 app.listen(port,()=>{
     
